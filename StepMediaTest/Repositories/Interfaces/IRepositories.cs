@@ -7,7 +7,7 @@ namespace StepMediaTest.Repositories.Interfaces
     {
         public Task InsertStudent(List<Student> students);
         public Task InsertTeacher(List<Teacher> teacher);
-        public Task<Viewmodel> GetViewModels(Param param)
+        public Task<List<Viewmodel>> GetViewModels(Param param);
 
     }
 }

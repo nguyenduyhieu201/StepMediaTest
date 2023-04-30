@@ -1,6 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using StepMediaTest.Repositories;
 using StepMediaTest.Repositories.Interfaces;
+using StepMediaTest.Services;
 using StepMediaTest.Services.Interfaces;
 
 var builder = WebApplication.CreateBuilder(args);

@@ -13,7 +13,7 @@ namespace StepMediaTest.Repositories
         {
             _context = context; 
         }
-        public Task<Viewmodel> GetViewModels(Param param)
+        public async Task<List<Viewmodel>> GetViewModels(Param param)
         {
             var students = _context.Students.Include(t => t.Teacher);
             var viewmodel = students.Select(o => new Viewmodel
@@ -31,8 +31,8 @@ namespace StepMediaTest.Repositories
             {
                 viewmodel = viewmodel.Where(v => v.TeacherName.Contains(param.StudentSearch));
             }
-            viewmodel =  viewmodel.OrderBy(t => t.TeacherName).ThenBy(t => t.StudentAge);
-            return viewmodel;
+            viewmodel = viewmodel.OrderBy(t => t.TeacherName).ThenBy(t => t.StudentAge);
+            return await viewmodel.ToListAsync();
 
         }
 
