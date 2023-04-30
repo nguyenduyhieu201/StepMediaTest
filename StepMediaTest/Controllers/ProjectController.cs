@@ -17,8 +17,8 @@ namespace StepMediaTest.Controllers
             _service = service;
         }
 
-        [HttpPost]
-        public IActionResult InsertStudent (List<Student> students)
+        [HttpPost("student")]
+        public IActionResult InsertStudent ([FromBody] List<Student> students)
         {
             try
             {
@@ -33,7 +33,7 @@ namespace StepMediaTest.Controllers
 
         [HttpPost("teacher")]
 
-        public IActionResult InsertTeacher (List<Teacher> teachers)
+        public IActionResult InsertTeacher ([FromBody] List<Teacher> teachers)
         {
             try
             {

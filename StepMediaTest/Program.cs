@@ -11,6 +11,7 @@ builder.Services.AddDbContext<StepMediaDbContext>(options => options.UseSqlServe
 
 builder.Services.AddScoped<IRepositories, Repositories>();
 builder.Services.AddScoped<IServices, Services>();
+
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
